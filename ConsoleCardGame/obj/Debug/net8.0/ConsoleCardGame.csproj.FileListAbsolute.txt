@@ -1,0 +1,14 @@
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\bin\Debug\net8.0\ConsoleCardGame.exe
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\bin\Debug\net8.0\ConsoleCardGame.deps.json
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\bin\Debug\net8.0\ConsoleCardGame.runtimeconfig.json
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\bin\Debug\net8.0\ConsoleCardGame.dll
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\bin\Debug\net8.0\ConsoleCardGame.pdb
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.AssemblyInfoInputs.cache
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.AssemblyInfo.cs
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.csproj.CoreCompileInputs.cache
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.dll
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\refint\ConsoleCardGame.dll
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.pdb
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.genruntimeconfig.cache
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ref\ConsoleCardGame.dll
