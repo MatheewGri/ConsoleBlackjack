@@ -38,6 +38,7 @@ namespace ConsoleCardGame
 
         public void InitializeMenu(int typeId, int item)
         {
+            Console.Clear();
             if (typeId == 0)
             {
                 menuItems = ["Сделать ставку",
@@ -78,7 +79,7 @@ namespace ConsoleCardGame
                 if (i != item) { Console.WriteLine("  " + Convert.ToString(i + 1) + ". " + menuItems[i]); }
                 else { Console.WriteLine("> " + Convert.ToString(i + 1) + ". " + menuItems[i] + " <"); }
             }
-            while (!exit || !run)
+            while (!exit)
             {
                 Console.WriteLine(Convert.ToString(typeId) + Convert.ToString(item));
                 pressedButton = Console.ReadKey();
@@ -127,14 +128,26 @@ namespace ConsoleCardGame
                     Console.WriteLine("$$$ Введите ставку $$$");
                     debt = int.Parse(Console.ReadLine());
                     StartGame();
+                    return;
                 }
                 if (actualItem == 1)
                 {
                     exit = true;
+                    return;
                 }
             }
             if (typeId == 1)
             {
+                if (actualItem == 0)
+                {
+                    OneMoreCard();
+                    return;
+                }
+                if (actualItem == 1)
+                {
+                    Enough();
+                    return;
+                }
                 if (actualItem == 2)
                 {
                     exit = true;
@@ -203,7 +216,7 @@ namespace ConsoleCardGame
             }
             foreach (var card in cards)
             {
-                if (!card.isGived) { playerCards.Add(card); card.isGived = true; card.isClosed = true; break; }
+                if (!card.isGived) { playerCards.Add(card); card.isGived = true;  break; }
             }
             foreach (var card in cards)
             {
@@ -211,25 +224,13 @@ namespace ConsoleCardGame
             }
             foreach (var card in cards)
             {
-                if (!card.isGived) { dilerCards.Add(card); card.isGived = true; break; }
+                if (!card.isGived) { dilerCards.Add(card); card.isGived = true; card.isClosed = true; break; }
             }
 
             
 
             Card closedCard = new Card("0", "0");
-            //List<Card> dilerCardsToDraw = [dilerCards[0], closedCard];
-
-            //List<Card> playerCardsToDraw = [playerCards[0], playerCards[1]];
-
-            //Console.WriteLine("+++++< Карты дилера >+++++");
-            //Console.WriteLine(string.Empty);
-            //DrawCards(dilerCards);
-            //Console.WriteLine(string.Empty);
-            //Console.WriteLine(string.Empty);
-            //Console.WriteLine(string.Empty);
-            //DrawCards(playerCards);
-            //Console.WriteLine(string.Empty);
-            //Console.WriteLine("=====| Ваши карты |=====");
+            
         }
 
         private static void DrawCards(List<Card> cardsToDraw)
@@ -238,7 +239,7 @@ namespace ConsoleCardGame
             {
                 Card card1 = cardsToDraw[0];
                 Card card2 = cardsToDraw[1];
-                if (card1.sign != "10" && card2.sign == "0")
+                if (card1.sign != "10" && card2.isClosed)
                 {
                     Console.WriteLine("            ________");
                     Console.WriteLine($"  ________ /X#X#X#X#X|");
@@ -247,7 +248,7 @@ namespace ConsoleCardGame
                     Console.WriteLine("|         |X#X#X#X#X#|");
                     Console.WriteLine("|         |#X#X#X#X#X|");
                 }
-                else if (card1.sign == "10" && card2.sign == "0")
+                else if (card1.sign == "10" && card2.isClosed)
                 {
                     Console.WriteLine("            ________");
                     Console.WriteLine($"  ________ /X#X#X#X#X|");
@@ -298,6 +299,78 @@ namespace ConsoleCardGame
                 Card card1 = cardsToDraw[0];
                 Card card2 = cardsToDraw[1];
                 Card card3 = cardsToDraw[2];
+                if (card1.sign != "10" && card2.sign != "10" && card3.sign != "10")
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ /  {card2.suit}{card2.sign}     /  {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" /  {card1.suit}{card1.sign}    |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
+                else if (card1.sign != "10" && card2.sign == "10" && card3.sign != "10")
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ / {card2.suit}{card2.sign}     /  {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" /  {card1.suit}{card1.sign}    |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
+                else if (card1.sign == "10" && card2.sign != "10" && card3.sign != "10")
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ /  {card2.suit}{card2.sign}     /  {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" / {card1.suit}{card1.sign}    |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
+                else if (card1.sign != "10" && card2.sign!= "10" && card3.sign == "10")
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ /  {card2.suit}{card2.sign}     / {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" /  {card1.suit}{card1.sign}    |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
+                else if (card1.sign == "10" && card2.sign == "10" && card3.sign != "10")
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ / {card2.suit}{card2.sign}     /  {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" / {card1.suit}{card1.sign}    |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
+                else if (card1.sign != "10" && card2.sign == "10" && card3.sign == "10")
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ / {card2.suit}{card2.sign}     / {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" /  {card1.suit}{card1.sign}    |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
+                else if (card1.sign == "10" && card2.sign!= "10" && card3.sign == "10")
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ /  {card2.suit}{card2.sign}     / {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" / {card1.suit}{card1.sign}    |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
+                else
+                {
+                    Console.WriteLine("            ________   _________");
+                    Console.WriteLine($"  ________ / {card2.suit}{card2.sign}     / {card3.suit}{card3.sign}      |");
+                    Console.WriteLine($" / {card1.suit}{card1.sign}    |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                    Console.WriteLine("|         |          |          |");
+                }
             }
             else if (cardsToDraw.Count == 4)
             {
@@ -320,6 +393,25 @@ namespace ConsoleCardGame
 
 
         }
+
+        private static void OneMoreCard()
+        {
+            foreach (var card in cards)
+            {
+                if (card.isGived == false)
+                {
+                    playerCards.Add(card);
+                    break;
+                }
+            }
+            
+
+        }
+        private void Enough()
+        {
+            Console.WriteLine("Enough");
+        }
+
 
        
     }
