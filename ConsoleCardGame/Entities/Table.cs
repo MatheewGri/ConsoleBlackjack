@@ -8,10 +8,11 @@ namespace ConsoleCardGame.Entities
 {
     internal class Table
     {
-        public void DrawDilerCards()
+        public void DrawDilerCards(string language)
         {
             int i = 0;
-            Console.WriteLine("+++++< Карты дилера >+++++");
+            if (language == "RUS") { Console.WriteLine("+++++< Карты дилера >+++++"); }
+            if (language == "ENG") { Console.WriteLine("+++++< Diler cards >+++++"); }
             Console.WriteLine(string.Empty);
             List<string> table = ["", "", "", "", "", ""];
             foreach (Card card in Diler.dilerCardsonTable)
@@ -78,7 +79,7 @@ namespace ConsoleCardGame.Entities
             
         }
 
-        public void DrawPlayerCards()
+        public void DrawPlayerCards(string language)
         {
             int i = 0;
             Console.WriteLine(string.Empty);
@@ -135,7 +136,8 @@ namespace ConsoleCardGame.Entities
                 Console.WriteLine(str);
             }
             Console.WriteLine(string.Empty);
-            Console.WriteLine("=====| Ваши карты |=====");
+            if (language == "RUS") { Console.WriteLine("=====| Ваши карты |====="); }
+            if (language == "ENG") { Console.WriteLine("=====| Your cards |====="); }
 
 
         }
@@ -166,5 +168,7 @@ namespace ConsoleCardGame.Entities
                 Console.WriteLine(str);
             }
         }
+
+        
     }
 }

@@ -12,3 +12,4 @@ C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ref
 C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.pdb
 C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.genruntimeconfig.cache
 C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ref\ConsoleCardGame.dll
+C:\Users\grigo\source\repos\ConsoleCardGame\ConsoleCardGame\obj\Debug\net8.0\ConsoleCardGame.sourcelink.json

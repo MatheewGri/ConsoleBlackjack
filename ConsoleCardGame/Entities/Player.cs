@@ -18,6 +18,16 @@ namespace ConsoleCardGame.Entities
 
         public bool Check21()
         {
+            CountCards();
+            if (CountCards() <= 21)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public int CountCards()
+        {
             int sum = 0;
             foreach (Card card in playerCardsonTable)
             {
@@ -50,32 +60,28 @@ namespace ConsoleCardGame.Entities
                     case "10":
                         sum += 10;
                         break;
-                    case "В":
+                    case "J":
                         sum += 10;
                         break;
-                    case "Д":
+                    case "Q":
                         sum += 10;
                         break;
-                    case "К":
+                    case "K":
                         sum += 10;
                         break;
-                    case "Т":
-                        if (sum + 10 <= 21)
+                    case "A":
+                        if (sum + 11 <= 21)
                         {
-                            sum += 10;
+                            sum += 11;
                         }
                         else
                         {
                             sum++;
                         }
                         break;
-                }                    
+                }
             }
-            if (sum <= 21)
-            {
-                return false;
-            }
-            return true;
+            return sum;
         }
     }
 }

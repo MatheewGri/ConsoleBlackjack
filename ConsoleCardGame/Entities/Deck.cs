@@ -11,7 +11,7 @@ namespace ConsoleCardGame.Entities
     {
         public List<Card> cards = new List<Card>();
         public static List<string> suits = new List<string> { "♥", "♦", "♣", "♠" };
-        public static List<string> signs = new List<string> { "2", "3", "4", "5", "6", "7", "8", "9", "10", "В", "Д", "К", "Т" };
+        public static List<string> signs = new List<string> { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
 
         public void CreateCards()
         {

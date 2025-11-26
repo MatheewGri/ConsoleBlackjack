@@ -21,6 +21,7 @@ namespace ConsoleCardGame
         public bool isStarted = false;
         public int money = 10000;
         public int debt = 0;
+        public string language = "ENG";
         Deck deck = new Deck();
         Player player = new Player();
         Diler diler = new Diler();
@@ -36,16 +37,72 @@ namespace ConsoleCardGame
 
         public void InitializeMenu(int typeId, int item)
         {
-            if (typeId == 0)
+            if (typeId == 0)//Основное меню
             {
-                menuItems = ["Начать",
+                Console.Clear();
+                if (language == "ENG")
+                {
+                    Console.WriteLine("$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$");
+                    Console.WriteLine("|        ____     ___           |");
+                    Console.WriteLine("|       |   /      |            |");
+                    Console.WriteLine("|       |---       |            |");
+                    Console.WriteLine("|       |___\\    \\_/            |");
+                    Console.WriteLine("|                               |");
+                    Console.WriteLine("$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$");
+                    Console.WriteLine(string.Empty);
+                    Console.WriteLine("      |                   |      ");
+                    Console.WriteLine("======|    Blackjack21    |======");
+                    Console.WriteLine("      |                   |      ");
+                    Console.WriteLine("This is console version of Blackjack (or 21)");
+                    Console.WriteLine("This project was created for educational purposes and for fun");
+                    Console.WriteLine("Author condemn gambling addiction");
+                    Console.WriteLine(string.Empty);
+                    Console.WriteLine("Use arrow keys and Enter to control");
+                    Console.WriteLine("Go to 'Settings' to set the language");
+
+                    menuItems = ["Start","Settings",
+                "Exit"];
+                }
+                else if (language == "RUS")
+                {
+                    Console.WriteLine("$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$");
+                    Console.WriteLine("|        ____     ___           |");
+                    Console.WriteLine("|       |   /      |            |");
+                    Console.WriteLine("|       |---       |            |");
+                    Console.WriteLine("|       |___\\    \\_/            |");
+                    Console.WriteLine("|                               |");
+                    Console.WriteLine("$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$=$");
+                    Console.WriteLine(string.Empty);
+                    Console.WriteLine("      |                   |      ");
+                    Console.WriteLine("======|    Blackjack21    |======");
+                    Console.WriteLine("      |                   |      ");
+                    Console.WriteLine("Это консольная версия игры в блэкджек (или 21)");
+                    Console.WriteLine("Этот проект был создан в учебных целях и по приколу");
+                    Console.WriteLine("Разработчик осуждает лудоманию и азартные игры");
+                    Console.WriteLine(string.Empty);
+                    Console.WriteLine("Для управления используйте стрелки и Enter");
+                    Console.WriteLine("Для настройки языка перейдите в 'Настройки'");
+
+                    menuItems = ["Начать","Настройки",
                 "Выход"];
+                }
+
             }
-            else if (typeId == 1)
+            else if (typeId == 1) //Основная игра
             {
-                menuItems = ["Еще карта",
-                "Достаточно",
-                "Выход"];
+                if (language == "ENG")
+                {
+                    menuItems = ["One more card",
+                    "Enough",
+                    "Exit"];
+                }
+                else if (language == "RUS")
+                {
+                    menuItems = ["Еще карта",
+                    "Достаточно",
+                    "Выход"];
+                }
+
             }
             else if (typeId == 2)
             {
@@ -54,16 +111,33 @@ namespace ConsoleCardGame
                 "Разделить",
                 "Выход"];
             }
-            actualItem = item;
+            else if (typeId == 3) //Настройки
+            {
+                if (language == "ENG")
+                {
+                    menuItems = [">English<", "Russian", "Back"];
+
+                }
+                else if (language == "RUS")
+                {
+                    menuItems = ["Английский", ">Русский<", "Назад"];
+                }
+            }
+            else if (typeId == 4)//Новая попытка
+            {
+                if (language == "ENG") { menuItems = ["Retry", "Exit"]; }
+                if (language == "RUS") { menuItems = ["Заново", "Выход"]; }
+            }
+
+                actualItem = item;
            
             for (int i = 0; i < menuItems.Length; i++)
             {
                 if (i != item) { Console.WriteLine("  " + Convert.ToString(i + 1) + ". " + menuItems[i]); }
-                else { Console.WriteLine("> " + Convert.ToString(i + 1) + ". " + menuItems[i] + " <"); }
+                else { Console.WriteLine("$ " + Convert.ToString(i + 1) + ". " + menuItems[i] + " $"); }
             }
             while (!exit)
             {
-                Console.WriteLine(Convert.ToString(typeId) + Convert.ToString(item));
                 pressedButton = Console.ReadKey();
                 if (pressedButton.Key is ConsoleKey.DownArrow || pressedButton.Key is ConsoleKey.S) { switchItemDown(); }
                 else if (pressedButton.Key is ConsoleKey.UpArrow || pressedButton.Key is ConsoleKey.W) { switchItemUp(); }
@@ -82,13 +156,29 @@ namespace ConsoleCardGame
 
         public void switchItemDown()
         {
+            
             if (actualItem < menuItems.Length - 1)
             {
                 actualItem += 1;
                 Console.Clear();
+                if (isStarted)
+                {
+                    table.DrawDilerCards(language);
+                    table.DrawPlayerCards(language);
+                }
                 InitializeMenu(typeId, actualItem);
             }
-            else { actualItem = 0; Console.Clear(); InitializeMenu(typeId, actualItem); }
+            else 
+            { 
+                actualItem = 0; 
+                Console.Clear();
+                if (isStarted)
+                {
+                    table.DrawDilerCards(language);
+                    table.DrawPlayerCards(language);
+                }
+                InitializeMenu(typeId, actualItem); 
+            }
         }
         public void switchItemUp()
         {
@@ -96,9 +186,24 @@ namespace ConsoleCardGame
             {
                 actualItem -= 1;
                 Console.Clear();
+                if (isStarted)
+                {
+                    table.DrawDilerCards(language);
+                    table.DrawPlayerCards(language);
+                }
                 InitializeMenu(typeId, actualItem);
             }
-            else { actualItem = menuItems.Length - 1;Console.Clear(); InitializeMenu(typeId, actualItem); }
+            else 
+            { 
+                actualItem = menuItems.Length - 1;
+                Console.Clear();
+                if (isStarted)
+                {
+                    table.DrawDilerCards(language);
+                    table.DrawPlayerCards(language);
+                }
+                InitializeMenu(typeId, actualItem);
+            }
         }
 
         public void RunItem()
@@ -117,6 +222,14 @@ namespace ConsoleCardGame
                 }
                 if (actualItem == 1)
                 {
+                    Console.Clear();
+                    actualItem = 0;
+                    typeId = 3;
+                    InitializeMenu(3, 0);
+                    return;
+                }
+                if (actualItem == 2)
+                {
                     exit = true;
                     return;
                 }
@@ -128,18 +241,19 @@ namespace ConsoleCardGame
                     Console.Clear();
                     deck.GiveCard(player.playerCards);
                     player.CardsOnTable();
-                    table.DrawDilerCards();
-                    table.DrawPlayerCards();
+                    table.DrawDilerCards(language);
+                    table.DrawPlayerCards(language);
                     if (player.Check21())
                     {
-                        Console.WriteLine("Перебор!");
-                        player.playerCards.Clear();
+                        if (language == "RUS") { Console.WriteLine("Перебор!"); }
+                        if (language == "ENG") { Console.WriteLine("Too much!"); }
+                        deck.GiveCardsBackinDeck(player.playerCards);
                         player.CardsOnTable();
-                        diler.dilerCards.Clear();
+                        deck.GiveCardsBackinDeck(diler.dilerCards);
                         diler.CardsOnTable();
                         actualItem = 0;
-                        typeId = 0;
-                        InitializeMenu(0, 0);
+                        typeId = 4;
+                        InitializeMenu(4, 0);
                         return;
                     }
                     typeId = 1;
@@ -149,9 +263,36 @@ namespace ConsoleCardGame
                 }
                 if (actualItem == 1)
                 {
-                    
+                    OpenDilerFirstCard();
                 }
                 if (actualItem == 2)
+                {
+                    exit = true;
+                    return;
+                }
+            }
+            if (typeId == 3) //Настройки
+            {
+                if (actualItem == 0) { language = "ENG"; Console.Clear(); actualItem = 0; InitializeMenu(3, 0); return; }
+                if (actualItem == 1) { language = "RUS"; Console.Clear(); actualItem = 1; InitializeMenu(3, 1); return; }
+                if (actualItem == 2) { actualItem = 0; typeId = 0; InitializeMenu(0, 0); return; }
+            }
+            if (typeId == 4)
+            {
+                if (actualItem == 0)
+                {
+                    Console.Clear();
+                    deck.GiveCardsBackinDeck(player.playerCards);
+                    player.CardsOnTable();
+                    deck.GiveCardsBackinDeck(diler.dilerCards);
+                    diler.CardsOnTable();
+                    StartGame();
+                    actualItem = 0;
+                    typeId = 1;
+                    InitializeMenu(1, 0);
+                    return;
+                }
+                if (actualItem == 1)
                 {
                     exit = true;
                     return;
@@ -165,7 +306,8 @@ namespace ConsoleCardGame
         {
             deck.CreateCards();
             deck.SwitchCards();
-            Console.WriteLine("$$$ Введите ставку $$$");
+            if (language == "RUS") { Console.WriteLine("$$$ Введите ставку $$$"); }
+            if (language == "ENG") { Console.WriteLine("$$$ Enter your bet $$$"); }
             debt = int.Parse(Console.ReadLine());
             deck.GiveCard(player.playerCards);
             deck.GiveCard(diler.dilerCards);
@@ -174,14 +316,48 @@ namespace ConsoleCardGame
             deck.GiveCard(diler.dilerCards);
             player.CardsOnTable();
             diler.CardsOnTable();
-            table.DrawDilerCards();
-            table.DrawPlayerCards();
+            table.DrawDilerCards(language);
+            table.DrawPlayerCards(language);
             isStarted = true;
 
 
         }
 
-        
+        public void OpenDilerFirstCard()
+        {
+            diler.dilerCards[0].isClosed = false;
+            diler.CardsOnTable();
+            table.DrawDilerCards(language);
+            table.DrawPlayerCards(language);
+            player.CountCards();
+            bool won = false;
+            while (diler.Play(player.CountCards()))
+            {
+                deck.GiveCard(diler.dilerCards);
+                //diler.CardsOnTable();
+                table.DrawDilerCards(language);
+                table.DrawPlayerCards(language);
+                if (diler.Check21()) { won = true; if (language == "ENG") { Console.WriteLine("You won!"); } if (language == "RUS") { Console.WriteLine("Вы выиграли!"); break; } }
+            }
+            if (diler.CountCards() > player.CountCards() && !won)
+            {
+                if (language == "ENG") { Console.WriteLine("You lost!"); }
+                if (language == "RUS") { Console.WriteLine("Вы проиграли!"); }
+            }
+            if (diler.CountCards() < player.CountCards() && !won)
+            {
+                if (language == "ENG") { Console.WriteLine("You won!"); }
+                if (language == "RUS") { Console.WriteLine("Вы победили!"); }
+            }
+            if (diler.CountCards() == player.CountCards() && !won)
+            {
+                if (language == "ENG") { Console.WriteLine("Dead heat!"); }
+                if (language == "RUS") { Console.WriteLine("Ничья!"); }
+            }
+            actualItem = 0;
+            typeId = 4;
+            InitializeMenu(4, 0);
+        }
 
         
 
