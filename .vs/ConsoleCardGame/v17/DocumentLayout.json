@@ -7,6 +7,26 @@
       "RelativeMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|solutionrelative:consolecardgame\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|c:\\users\\grigo\\source\\repos\\consolecardgame\\consolecardgame\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|solutionrelative:consolecardgame\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|c:\\users\\grigo\\source\\repos\\consolecardgame\\consolecardgame\\entities\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|solutionrelative:consolecardgame\\entities\\table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|c:\\users\\grigo\\source\\repos\\consolecardgame\\consolecardgame\\entities\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|solutionrelative:consolecardgame\\entities\\card.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|c:\\users\\grigo\\source\\repos\\consolecardgame\\consolecardgame\\entities\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|solutionrelative:consolecardgame\\entities\\deck.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|c:\\users\\grigo\\source\\repos\\consolecardgame\\consolecardgame\\entities\\diler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|solutionrelative:consolecardgame\\entities\\diler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|c:\\users\\grigo\\source\\repos\\consolecardgame\\consolecardgame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{755CDF87-E412-4854-AD1A-79EBC8F3246E}|ConsoleCardGame\\ConsoleCardGame.csproj|solutionrelative:consolecardgame\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,8 +38,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Diler.cs",
+              "DocumentMoniker": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Diler.cs",
+              "RelativeDocumentMoniker": "ConsoleCardGame\\Entities\\Diler.cs",
+              "ToolTip": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Diler.cs",
+              "RelativeToolTip": "ConsoleCardGame\\Entities\\Diler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T06:44:30.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Player.cs",
+              "RelativeDocumentMoniker": "ConsoleCardGame\\Entities\\Player.cs",
+              "ToolTip": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Player.cs",
+              "RelativeToolTip": "ConsoleCardGame\\Entities\\Player.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE0AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T06:44:18.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Deck.cs",
+              "DocumentMoniker": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Deck.cs",
+              "RelativeDocumentMoniker": "ConsoleCardGame\\Entities\\Deck.cs",
+              "ToolTip": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Deck.cs",
+              "RelativeToolTip": "ConsoleCardGame\\Entities\\Deck.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T06:40:31.772Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,14 +87,40 @@
               "RelativeDocumentMoniker": "ConsoleCardGame\\Menu.cs",
               "ToolTip": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Menu.cs",
               "RelativeToolTip": "ConsoleCardGame\\Menu.cs",
-              "ViewState": "AgIAADMBAAAAAAAAAAAAAHABAABeAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T03:12:15.612Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "Table.cs",
+              "DocumentMoniker": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Table.cs",
+              "RelativeDocumentMoniker": "ConsoleCardGame\\Entities\\Table.cs",
+              "ToolTip": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Table.cs",
+              "RelativeToolTip": "ConsoleCardGame\\Entities\\Table.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADkAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T06:39:56.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Card.cs",
+              "DocumentMoniker": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Card.cs",
+              "RelativeDocumentMoniker": "ConsoleCardGame\\Entities\\Card.cs",
+              "ToolTip": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Entities\\Card.cs",
+              "RelativeToolTip": "ConsoleCardGame\\Entities\\Card.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-26T06:38:40.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\grigo\\source\\repos\\ConsoleCardGame\\ConsoleCardGame\\Program.cs",
               "RelativeDocumentMoniker": "ConsoleCardGame\\Program.cs",
